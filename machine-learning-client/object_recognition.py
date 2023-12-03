@@ -1,10 +1,14 @@
-# pylint: disable=import-error
+"""
+This module provides functions for object recognition using the MobileNetV2 model.
+"""
+
 import numpy as np
+
+# pylint: disable=import-error
 import cv2
 from keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input, decode_predictions
-from database_manager import DatabaseManager
 
-# This module provides functions for object recognition using the MobileNetV2 model.
+
 model = MobileNetV2(weights='imagenet')
 
 

@@ -1,7 +1,10 @@
+"""
+# This module provides a DatabaseManager class for interacting with a MongoDB database.
+"""
+
 from pymongo import MongoClient
 
 
-# This module provides a DatabaseManager class for interacting with a MongoDB database.
 class DatabaseManager:
     """
     A class to manage database operations for the object recognition system.
@@ -14,9 +17,6 @@ class DatabaseManager:
     def __init__(self, uri="mongodb://localhost:27017/"):
         """
         Initializes the DatabaseManager with a MongoDB connection.
-
-        Args:
-            uri (str): The URI for connecting to the MongoDB server. Defaults to 'mongodb://localhost:27017/'.
         """
         self.client = MongoClient(uri)
         self.db = self.client['object_recognition_db']
