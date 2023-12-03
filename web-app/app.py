@@ -1,11 +1,11 @@
+"""
+This module sets up a Flask web application for uploading and processing images.
+"""
+
 import os
 import requests
 from flask import Flask, render_template, request, jsonify, send_from_directory
 
-
-"""
-This module sets up a Flask web application for uploading and processing images.
-"""
 app = Flask(__name__, static_folder='public')
 
 # Directory to save uploaded images

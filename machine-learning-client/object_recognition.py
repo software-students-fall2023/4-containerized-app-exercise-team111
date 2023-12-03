@@ -1,5 +1,6 @@
+# pylint: disable=import-error
 import numpy as np
-import cv2 # pylint: disable=no-member
+import cv2
 from keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input, decode_predictions
 from database_manager import DatabaseManager
 
