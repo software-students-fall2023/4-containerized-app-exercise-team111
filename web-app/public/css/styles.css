@@ -1,0 +1,60 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #eaeaea; /* Softer background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #333; /* Default text color */
+}
+
+#webcam {
+    max-width: 100%;
+    border: 3px solid #008CBA; /* Changed border color */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+button {
+    background-color: #008CBA; /* Modern blue */
+    color: white;
+    padding: 15px 25px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for button */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover */
+}
+
+button:hover {
+    background-color: #00688B; /* Darker shade on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+#results {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s; /* Transition for hover effect */
+    width: 80%;
+    background: white;
+    word-wrap: break-word;
+    font-size: 16px; /* Larger font for readability */
+}
+
+#results:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px; /* Add space below the heading */
+}
