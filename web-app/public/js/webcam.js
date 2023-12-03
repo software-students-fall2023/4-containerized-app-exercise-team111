@@ -1,14 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const webcamElement = document.getElementById('webcam');
     const captureButton = document.getElementById('capture');
     const resultsElement = document.getElementById('results');
 
     // Initialize the webcam
-    navigator.mediaDevices.getUserMedia({ video: true })
+    navigator.mediaDevices.getUserMedia({video: true})
         .then(stream => webcamElement.srcObject = stream)
         .catch(err => console.error("error accessing webcam", err));
 
-    captureButton.addEventListener('click', function() {
+    captureButton.addEventListener('click', function () {
         captureImage(webcamElement)
             .then(blob => sendImageToServer(blob))
             .then(displayResults)
@@ -37,18 +37,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayResults(data) {
-    if (data.error) {
-        resultsElement.innerText = data.error;
-    } else {
-        let resultText = ``;
-        if (data.prediction) {
-            resultText += `Label: ${data.prediction.label}<br>`;
-            resultText += `Probability: ${(data.prediction.probability * 100).toFixed(2)}%<br>`;
+        if (data.error) {
+            resultsElement.innerText = data.error;
         } else {
-            resultText += 'No prediction data available.<br>';
+            let resultText = ``;
+            if (data.prediction) {
+                resultText += `Label: ${data.prediction.label}<br>`;
+                resultText += `Probability: ${(data.prediction.probability * 100).toFixed(2)}%<br>`;
+            } else {
+                resultText += 'No prediction data available.<br>';
+            }
+            resultsElement.innerHTML = resultText;
         }
-        resultsElement.innerHTML = resultText;
     }
-}
 
 });

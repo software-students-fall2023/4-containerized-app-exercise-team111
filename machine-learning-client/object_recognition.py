@@ -6,9 +6,13 @@ import numpy as np
 
 # pylint: disable=E1101
 import cv2
-from keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input, decode_predictions
+from keras.applications.mobilenet_v2 import (
+    MobileNetV2,
+    preprocess_input,
+    decode_predictions,
+)
 
-model = MobileNetV2(weights='imagenet')
+model = MobileNetV2(weights="imagenet")
 
 
 def preprocess_image(image_path):

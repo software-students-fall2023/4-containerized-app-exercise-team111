@@ -19,7 +19,7 @@ class DatabaseManager:
         Initializes the DatabaseManager with a MongoDB connection.
         """
         self.client = MongoClient(uri)
-        self.db = self.client['object_recognition_db']
+        self.db = self.client["object_recognition_db"]
 
     def save_prediction(self, image_path, predictions):
         """
@@ -32,10 +32,10 @@ class DatabaseManager:
         Returns:
             ObjectId: The ID of the inserted document in the database.
         """
-        collection = self.db['predictions']
+        collection = self.db["predictions"]
         prediction_data = {
-            'image_path': image_path,
-            'predictions': predictions  # Expecting a list of dictionaries
+            "image_path": image_path,
+            "predictions": predictions,  # Expecting a list of dictionaries
         }
         result = collection.insert_one(prediction_data)
         return result.inserted_id
@@ -47,4 +47,4 @@ class DatabaseManager:
         Returns:
             list: A list of all prediction results stored in the database.
         """
-        return list(self.db['predictions'].find())
+        return list(self.db["predictions"].find())
