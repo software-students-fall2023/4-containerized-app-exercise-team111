@@ -1,18 +1,21 @@
-import traceback
-
+import os
 from flask import Flask, request, jsonify
 from object_recognition import recognize_objects
 from database_manager import DatabaseManager
-import os
 
+# This module provides a Flask web application for image processing using object recognition.
 app = Flask(__name__)
-
 
 db_manager = DatabaseManager()
 
 
 @app.route('/process', methods=['POST'])
 def process_image():
+    """
+    Process an image and return object recognition results.
+    Expects a POST request with an 'image_path' in the JSON body.
+    Returns JSON with the highest probability prediction and saves it to a database.
+    """
     data = request.get_json()
 
     if not data or 'image_path' not in data:
@@ -25,6 +28,9 @@ def process_image():
 
     try:
         predictions = recognize_objects(image_path)
+        if not predictions:
+            return jsonify({'error': 'No predictions made'}), 500
+
         highest_prediction = max(predictions, key=lambda item: item[2])
         _, label, probability = highest_prediction
         highest_prediction_converted = {
@@ -34,10 +40,8 @@ def process_image():
 
         result_id = db_manager.save_prediction(image_path, [highest_prediction_converted])
         return jsonify({'result_id': str(result_id), 'prediction': highest_prediction_converted})
-    except Exception as e:
-        traceback_str = traceback.format_exc()
-        app.logger.error(traceback_str)
-        return jsonify({'error': str(e)}), 500
+    except FileNotFoundError as e:
+        return jsonify({'error': str(e)}), 404
 
 
 if __name__ == '__main__':
