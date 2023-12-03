@@ -3,7 +3,10 @@ from flask import Flask, request, jsonify
 from object_recognition import recognize_objects
 from database_manager import DatabaseManager
 
-# This module provides a Flask web application for image processing using object recognition.
+"""
+This module provides a Flask web application for processing images with object recognition.
+It includes endpoints for processing images and interfacing with a database to store the results.
+"""
 app = Flask(__name__)
 
 db_manager = DatabaseManager()

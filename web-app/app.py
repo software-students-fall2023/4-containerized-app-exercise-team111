@@ -2,8 +2,10 @@ import os
 import requests
 from flask import Flask, render_template, request, jsonify, send_from_directory
 
-# This module sets up a Flask web application for uploading and processing images.
 
+"""
+This module sets up a Flask web application for uploading and processing images.
+"""
 app = Flask(__name__, static_folder='public')
 
 # Directory to save uploaded images
@@ -39,15 +41,10 @@ def upload_image():
     image_path = os.path.abspath(os.path.join(UPLOAD_FOLDER, file.filename))
     file.save(image_path)
 
-    try:
-        response = requests.post(ML_CLIENT_URL, json={'image_path': image_path}, timeout=10)
-        response.raise_for_status()
-        result = response.json()
-        return jsonify(result)
-    except requests.exceptions.HTTPError as http_err:
-        return jsonify({'error': f'HTTP error occurred: {http_err}'}), 500
-    except Exception as err:
-        return jsonify({'error': f'Other error occurred: {err}'}), 500
+    response = requests.post(ML_CLIENT_URL, json={'image_path': image_path}, timeout=10)
+    response.raise_for_status()
+    result = response.json()
+    return jsonify(result)
 
 
 @app.route('/uploads/<filename>')

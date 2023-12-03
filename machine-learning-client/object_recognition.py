@@ -1,5 +1,5 @@
 import numpy as np
-import cv2
+import cv2 # pylint: disable=no-member
 from keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input, decode_predictions
 from database_manager import DatabaseManager
 
