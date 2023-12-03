@@ -18,10 +18,6 @@ jobs:
           pipenv sync --dev --python $(which python)
           pipenv shell --fancy --python $(which python)
           pipenv install
-      - name: Clear cache
-        run: |
-          pipenv --rm  # Remove the virtual environment
-          rm -rf ~/.cache/pip  # Clear the pip cache
       - name: Lint with pylint
         if: ${{ hashFiles('**/*.py') != '' }}
         run: |
