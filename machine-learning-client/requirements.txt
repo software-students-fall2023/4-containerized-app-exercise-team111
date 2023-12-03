@@ -1,4 +1,0 @@
-tensorflow
-pytest
-Pillow
-opencv-python

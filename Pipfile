@@ -6,6 +6,14 @@ name = "pypi"
 [packages]
 pylint = "*"
 black = "*"
+tensorflow = "*"
+torch = "*"
+torchvision = "*"
+opencv-python = "*"
+keras = "*"
+pymongo = "*"
+pytest = "*"
+flask = "*"
 
 [dev-packages]
 
