@@ -1,8 +1,8 @@
 # Containerized App Exercise
 # Image Recognition
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](URL-to-build-status)
-[![Tests Status](https://img.shields.io/badge/tests-passing-brightgreen.svg)](URL-to-tests-status)
+[![Build Status](https://github.com/software-students-fall2023/4-containerized-app-exercise-team111/actions/workflows/web-app.yml/badge.svg)](https://github.com/software-students-fall2023/4-containerized-app-exercise-team111/actions/workflows/web-app.yml/badge.svg)
+[![Build Status](https://github.com/software-students-fall2023/4-containerized-app-exercise-team111/actions/workflows/machine-learning-client.yml/badge.svg)](https://github.com/software-students-fall2023/4-containerized-app-exercise-team111/actions/workflows/machine-learning-client.yml/badge.svg)
 
 ## Description
 
