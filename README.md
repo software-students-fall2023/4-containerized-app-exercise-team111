@@ -14,6 +14,47 @@ indicate the plausibility of matching object in the image. The web app connects 
 - [Teammate1](https://github.com/stevenkhl446)
 - [Teammate2](https://github.com/wwxihan2)
 
+## Stand up meetings
+```
+Standup Report - 30 November 2023
+--------------------------------
+
+Steven Liu @stevenkhl446
+- did: implemented machine learning client
+-doing: test functions for mlc
+-blockers none
+
+Merlin @wwxihan2
+- did: setting up web app
+-doing: client side javascript for connecting to database(setting up pymongo) 
+-blockers none
+
+
+Standup Report - 2 December 2023
+--------------------------------
+Steven Liu @stevenkhl446
+-did: redirect machine client learning to Merlin
+-doing: test functions for updated machine client learning by Merlin
+-blockers none
+
+Merlin @wwxihan2
+- did: finished web app routers structure and pymongo
+-doing: client side javascript, and machine learning client 
+-blockers none
+
+Standup Report - 4 December 2023
+--------------------------------
+Steven Liu @stevenkhl446
+- did: finsihed test functions for both web-app and machine client learning
+-doing: retesting, and mongodb test functions on machine learning, other documentations 
+-blockers none
+
+Merlin @wwxihan2
+- did: machine learning client, webcam.js(client side javascript), web app, mongodb.
+-doing: review all documentations
+-blockers none
+```
+
 
 ## Configuration and Setup
 
