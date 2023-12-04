@@ -5,7 +5,7 @@ This module sets up a Flask web application for uploading and processing images.
 import os
 import requests
 from pymongo import MongoClient
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__, static_folder="public")
 
@@ -15,8 +15,8 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 # URL of the machine-learning-client service
-ML_CLIENT_URL = "http://localhost:5003/process"
-MONGO_URI = "mongodb://localhost:27017"
+ML_CLIENT_URL = "http://machine-learning-client:5003/process"
+MONGO_URI = "mongodb://mongodb:27017"
 MONGO_DBNAME = "object_recognition_db"
 
 
