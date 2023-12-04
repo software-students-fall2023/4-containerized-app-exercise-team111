@@ -36,19 +36,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }).then(response => response.json());
     }
 
-    function displayResults(data) {
-        if (data.error) {
-            resultsElement.innerText = data.error;
+function displayResults(data) {
+    const resultsElement = document.getElementById("results");
+
+    if (data.error) {
+        resultsElement.innerText = data.error;
+    } else {
+        let resultText = '';
+
+        if (data.all_predictions && data.all_predictions.length > 0) {
+            data.all_predictions.reverse().forEach(predictionGroup => {
+                predictionGroup.forEach(prediction => {
+                    resultText += `Label: ${prediction.label}<br>`;
+                    resultText += `Probability: ${(prediction.probability * 100).toFixed(2)}%<br><br>`;
+                });
+            });
         } else {
-            let resultText = ``;
-            if (data.prediction) {
-                resultText += `Label: ${data.prediction.label}<br>`;
-                resultText += `Probability: ${(data.prediction.probability * 100).toFixed(2)}%<br>`;
-            } else {
-                resultText += 'No prediction data available.<br>';
-            }
-            resultsElement.innerHTML = resultText;
+            resultText += 'No prediction data available.<br>';
         }
+
+        resultsElement.innerHTML = resultText;
     }
+}
+
+
+
 
 });

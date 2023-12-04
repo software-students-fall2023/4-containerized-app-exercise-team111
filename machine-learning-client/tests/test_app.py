@@ -23,8 +23,6 @@ def client():
     "cv2.imread", return_value=np.zeros((224, 224, 3), dtype=np.uint8)
 )  # Mocking image reading with a dummy array
 def test_process_image(
-    mock_cv2_imread,
-    mock_os_path_exists,
     mock_save_prediction,
     mock_recognize_objects,
     client,

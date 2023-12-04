@@ -58,3 +58,12 @@ button:hover {
 h1 {
     margin-bottom: 20px; /* Add space below the heading */
 }
+
+.scrollable-results {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    border: 1px solid #ccc; /* Optional: adds a border around the scrollable area */
+    padding: 10px; /* Optional: adds some spacing inside the box */
+    margin-top: 10px; /* Optional: adds some space above the box */
+}
+

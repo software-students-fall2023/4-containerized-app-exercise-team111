@@ -11,7 +11,7 @@ services:
       context: .
       dockerfile: machine-learning-client/Dockerfile
     ports:
-      - "5003:5000"
+      - "5003:5003"
     environment:
       - MONGO_URI=mongodb://mongodb:27017
       - MONGO_DBNAME=object_recognition_db
@@ -25,7 +25,7 @@ services:
       context: .
       dockerfile: web-app/Dockerfile
     ports:
-      - "8001:5000"
+      - "8001:8001"
     environment:
       - ML_CLIENT_URL=http://machine-learning-client:5003
       - MONGO_URI=mongodb://mongodb:27017

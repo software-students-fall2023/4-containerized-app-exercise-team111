@@ -4,10 +4,9 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from keras.applications.mobilenet_v2 import MobileNetV2
 import numpy as np
 from unittest.mock import patch
-from object_recognition import preprocess_image, recognize_objects
+from object_recognition import preprocess_image
 
 
 @patch("cv2.imread", return_value=np.zeros((224, 224, 3), dtype=np.uint8))

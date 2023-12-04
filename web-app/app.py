@@ -15,9 +15,11 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 # URL of the machine-learning-client service
-ML_CLIENT_URL = "http://machine-learning-client:5003/process"
-MONGO_URI = "mongodb://mongodb:27017"
+ML_CLIENT_URL = "http://localhost:5003/process"
+MONGO_URI = "mongodb://localhost:27017"
 MONGO_DBNAME = "object_recognition_db"
+
+
 @app.route("/")
 def index():
     """
@@ -42,28 +44,41 @@ def upload_image():
     image_path = os.path.abspath(os.path.join(UPLOAD_FOLDER, file.filename))
     file.save(image_path)
 
-    response = requests.post(ML_CLIENT_URL, json={"image_path": image_path}, timeout=10)
+    requests.post(ML_CLIENT_URL, json={"image_path": image_path}, timeout=10)
     client = MongoClient(MONGO_URI)
     db = client[MONGO_DBNAME]
 
-    # Assuming the result is stored with a reference to the image filename
-    # Add appropriate query logic based on your database schema
-    query_result = db.results.find_one({"image_file": file.filename})
+    # Fetch all predictions from the database
+    all_predictions = []
+    for document in db["predictions"].find():
+        if "predictions" in document:
+            all_predictions.append(document["predictions"])
 
-    if query_result is None:
-        return jsonify({"error": "Result not found for the uploaded image"}), 404
+    # Return the current result and all predictions
+    return jsonify(
+        {
+            "all_predictions": all_predictions,
+        }
+    )
 
-    # Assuming 'result' field in the document contains the desired information
-    return jsonify(query_result["result"])
 
-
-@app.route("/uploads/<filename>")
-def uploaded_file(filename):
+@app.route("/predictions", methods=["GET"])
+def list_predictions():
     """
-    Serve an uploaded file from the UPLOAD_FOLDER.
+    Retrieve all predictions from the database and return them as a JSON list.
     """
-    return send_from_directory(UPLOAD_FOLDER, filename)
+    client = MongoClient(MONGO_URI)
+    db = client[MONGO_DBNAME]
+
+    predictions = []
+    for document in db.results.find():
+        # Assuming 'result' field in each document contains prediction data
+        prediction_data = document.get("result")
+        if prediction_data:
+            predictions.append(prediction_data)
+
+    return jsonify(predictions)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "5000")), debug=True)
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "8001")), debug=True)

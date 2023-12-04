@@ -14,7 +14,7 @@ class DatabaseManager:
         db (Database): A reference to the MongoDB database.
     """
 
-    def __init__(self, uri="mongodb://mongodb:27017/"):
+    def __init__(self, uri="mongodb://localhost:27017/"):
         """
         Initializes the DatabaseManager with a MongoDB connection.
         """
