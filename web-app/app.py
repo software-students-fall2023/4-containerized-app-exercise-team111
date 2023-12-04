@@ -4,6 +4,7 @@ This module sets up a Flask web application for uploading and processing images.
 
 import os
 import requests
+from pymongo import MongoClient
 from flask import Flask, render_template, request, jsonify, send_from_directory
 
 app = Flask(__name__, static_folder="public")
@@ -15,6 +16,8 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 # URL of the machine-learning-client service
 ML_CLIENT_URL = "http://localhost:5003/process"
+MONGO_URI = "mongodb://localhost:27017"
+MONGO_DBNAME = "object_recognition_db"
 
 
 @app.route("/")
@@ -41,20 +44,46 @@ def upload_image():
     image_path = os.path.abspath(os.path.join(UPLOAD_FOLDER, file.filename))
     file.save(image_path)
 
-    response = requests.post(ML_CLIENT_URL, json={"image_path": image_path}, timeout=10)
-    response.raise_for_status()
-    result = response.json()
-    return jsonify(result)
+    requests.post(ML_CLIENT_URL, json={"image_path": image_path}, timeout=10)
+    client = MongoClient(MONGO_URI)
+    db = client[MONGO_DBNAME]
+
+    # Fetch all predictions from the database
+    all_predictions = []
+    for document in db["predictions"].find():
+        if "predictions" in document:
+            all_predictions.append(document["predictions"])
+
+    # Return the current result and all predictions
+    return jsonify(
+        {
+            "all_predictions": all_predictions,
+        }
+    )
 
 
-@app.route("/uploads/<filename>")
-def uploaded_file(filename):
+@app.route("/predictions", methods=["GET"])
+def list_predictions():
     """
-    Serve an uploaded file from the UPLOAD_FOLDER.
+    Retrieve all predictions from the database and return them as a JSON list.
     """
+<<<<<<< HEAD
     print("Flask App CWD:", os.getcwd())
     return send_from_directory(UPLOAD_FOLDER, filename)
+=======
+    client = MongoClient(MONGO_URI)
+    db = client[MONGO_DBNAME]
+
+    predictions = []
+    for document in db.results.find():
+        # Assuming 'result' field in each document contains prediction data
+        prediction_data = document.get("result")
+        if prediction_data:
+            predictions.append(prediction_data)
+
+    return jsonify(predictions)
+>>>>>>> 9727784d106c658bf93dc9e4606086b723e6c65c
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8001, debug=True)
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "8001")), debug=True)

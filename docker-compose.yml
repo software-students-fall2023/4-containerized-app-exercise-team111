@@ -9,23 +9,29 @@ services:
   machine-learning-client:
     build:
       context: .
-      dockerfile: Dockerfile.mlc
+      dockerfile: machine-learning-client/Dockerfile
     ports:
       - "5003:5003"
-    environment:
-      - MONGO_URI=mongodb://mongodb:27017
-      - MONGO_DBNAME=expressions
-    depends_on:
-      - mongodb
-
-  web-app:
-    build:
-      context: .
-      dockerfile: Dockerfile.web
-    ports:
-     - "8001:8001"
     environment:
       - MONGO_URI=mongodb://mongodb:27017
       - MONGO_DBNAME=object_recognition_db
     depends_on:
       - mongodb
+    volumes:
+      - ./machine-learning-client:/app
+
+  web-app:
+    build:
+      context: .
+      dockerfile: web-app/Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      - ML_CLIENT_URL=http://machine-learning-client:5003
+      - MONGO_URI=mongodb://mongodb:27017
+      - MONGO_DBNAME=object_recognition_db
+    depends_on:
+      - mongodb
+      - machine-learning-client
+    volumes:
+      - ./web-app:/app

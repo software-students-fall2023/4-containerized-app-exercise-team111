@@ -42,15 +42,11 @@ def process_image():
             "probability": float(probability),
         }
 
-        result_id = db_manager.save_prediction(
-            image_path, [highest_prediction_converted]
-        )
-        return jsonify(
-            {"result_id": str(result_id), "prediction": highest_prediction_converted}
-        )
+        db_manager.save_prediction(image_path, [highest_prediction_converted])
+
     except FileNotFoundError as e:
         return jsonify({"error": str(e)}), 404
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5003, debug=True)
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "5003")), debug=True)
