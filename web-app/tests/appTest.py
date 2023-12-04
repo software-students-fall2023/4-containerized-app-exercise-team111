@@ -8,11 +8,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 import json
 from io import BytesIO
 from app import app as flask_app  
-
 from requests_mock import Mocker
-
-
-
 
 @pytest.fixture
 def app():
@@ -66,6 +62,8 @@ def test_upload_image(client, requests_mock):
     response = client.post("/upload", data=data)
     assert response.status_code == 200
     assert response.json == {"result": "success"}
+
+
 
 
 
