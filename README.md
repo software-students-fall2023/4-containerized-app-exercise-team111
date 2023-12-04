@@ -83,7 +83,7 @@ Zhiyi @Val001z
 - step 1: Clone the repository
 - step 2: In the main directory, run `docker-compose up --build`.
 - step 3: Open your browser and go to `http://localhost:8001`. 
-- step 4: Engjoy using the application!
+- step 4: Enjoy using the application!
 
 ## Test Coverage
 ![](coverage.png)
