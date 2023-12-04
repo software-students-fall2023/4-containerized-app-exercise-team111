@@ -58,6 +58,12 @@ Merlin @wwxihan2
 ```
 
 
+## Task boards
+
+- [Link to task board 1](https://github.com/orgs/software-students-fall2023/projects/99)
+- [Link to task board 2](https://github.com/orgs/software-students-fall2023/projects/100)
+
+
 ## Running the Application
 
 - step 1: clone the repository
