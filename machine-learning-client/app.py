@@ -51,9 +51,6 @@ def process_image():
         )
     except FileNotFoundError:
         return jsonify({"error": "No image found at the provided path"}), 404
-    except Exception as e:
-        # General exception for any other unexpected errors
-        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
 
 
 if __name__ == "__main__":
