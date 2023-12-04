@@ -70,3 +70,13 @@ Merlin @wwxihan2
 - step 2: run  docker-compose up --build in the main directory
 - step 3: go to http://localhost:8001 on your browser
 - step 4: enjoy!
+
+## Test Coverage
+![](coverage.png)
+
+
+
+- step 1: clone the repository
+- step 2: run  docker-compose up --build in the main directory
+- step 3: go to http://localhost:8001 on your browser
+- step 4: enjoy!****
