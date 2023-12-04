@@ -52,6 +52,7 @@ def uploaded_file(filename):
     """
     Serve an uploaded file from the UPLOAD_FOLDER.
     """
+    print("Flask App CWD:", os.getcwd())
     return send_from_directory(UPLOAD_FOLDER, filename)
 
 
