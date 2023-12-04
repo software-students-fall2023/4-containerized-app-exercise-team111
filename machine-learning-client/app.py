@@ -43,7 +43,12 @@ def process_image():
         }
 
         db_manager.save_prediction(image_path, [highest_prediction_converted])
-
+        return jsonify(
+            {
+                "message": "Image processed successfully",
+                "prediction": highest_prediction_converted,
+            }
+        )
     except FileNotFoundError as e:
         return jsonify({"error": str(e)}), 404
 
