@@ -31,6 +31,11 @@ Merlin @wwxihan2
 - doing: client side javascript for connecting to database(setting up pymongo) 
 - blockers: none
 
+Zhiyi @Val001z
+- did: review project specifications/instructions
+- doing: try to develop functions according to instructions
+- blockers: none
+
 Standup Report - 2 December 2023
 --------------------------------
 Steven Liu @stevenkhl446
@@ -43,6 +48,11 @@ Merlin @wwxihan2
 - doing: client side javascript, and machine learning client 
 - blockers: none
 
+Zhiyi @Val001z
+- did: review the updated functions and limitations
+- doing: test functions
+- blockers: none
+
 Standup Report - 4 December 2023
 --------------------------------
 Steven Liu @stevenkhl446
@@ -53,6 +63,11 @@ Steven Liu @stevenkhl446
 Merlin @wwxihan2
 - did: machine learning client, webcam.js(client side javascript), web app, mongodb.
 - doing: review all documentations
+- blockers: none
+
+Zhiyi @Val001z
+- did: write the documentations.
+- doing: review and revise the documentations
 - blockers: none
 ```
 
