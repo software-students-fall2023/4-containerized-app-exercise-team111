@@ -49,9 +49,12 @@ def process_image():
                 "prediction": highest_prediction_converted,
             }
         )
-    except FileNotFoundError as e:
-        return jsonify({"error": str(e)}), 404
+    except FileNotFoundError:
+        return jsonify({"error": "No image found at the provided path"}), 404
+    except Exception as e:
+        # General exception for any other unexpected errors
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "5003")), debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5003)
