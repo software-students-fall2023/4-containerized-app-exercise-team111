@@ -16,6 +16,7 @@ pytest = "*"
 flask = "*"
 mongomock = "*"
 requests-mock = "*"
+pytest-mock = "*"
 
 [dev-packages]
 

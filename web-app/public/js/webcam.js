@@ -36,30 +36,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }).then(response => response.json());
     }
 
-function displayResults(data) {
-    const resultsElement = document.getElementById("results");
+    function displayResults(data) {
+        const resultsElement = document.getElementById("results");
 
-    if (data.error) {
-        resultsElement.innerText = data.error;
-    } else {
-        let resultText = '';
-
-        if (data.all_predictions && data.all_predictions.length > 0) {
-            data.all_predictions.reverse().forEach(predictionGroup => {
-                predictionGroup.forEach(prediction => {
-                    resultText += `Label: ${prediction.label}<br>`;
-                    resultText += `Probability: ${(prediction.probability * 100).toFixed(2)}%<br><br>`;
-                });
-            });
+        if (data.error) {
+            resultsElement.innerText = data.error;
         } else {
-            resultText += 'No prediction data available.<br>';
+            let resultText = '';
+
+            if (data.all_predictions && data.all_predictions.length > 0) {
+                data.all_predictions.reverse().forEach(predictionGroup => {
+                    predictionGroup.forEach(prediction => {
+                        resultText += `Label: ${prediction.label}<br>`;
+                        resultText += `Probability: ${(prediction.probability * 100).toFixed(2)}%<br><br>`;
+                    });
+                });
+            } else {
+                resultText += 'No prediction data available.<br>';
+            }
+
+            resultsElement.innerHTML = resultText;
         }
-
-        resultsElement.innerHTML = resultText;
     }
-}
-
-
 
 
 });
