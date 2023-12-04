@@ -1,12 +1,6 @@
 name: WebAppCI
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-permissions:
-  contents: read
+on: [push, pull_request]
 
 jobs:
   build:
