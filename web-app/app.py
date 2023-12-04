@@ -67,6 +67,10 @@ def list_predictions():
     """
     Retrieve all predictions from the database and return them as a JSON list.
     """
+<<<<<<< HEAD
+    print("Flask App CWD:", os.getcwd())
+    return send_from_directory(UPLOAD_FOLDER, filename)
+=======
     client = MongoClient(MONGO_URI)
     db = client[MONGO_DBNAME]
 
@@ -78,6 +82,7 @@ def list_predictions():
             predictions.append(prediction_data)
 
     return jsonify(predictions)
+>>>>>>> 9727784d106c658bf93dc9e4606086b723e6c65c
 
 
 if __name__ == "__main__":
