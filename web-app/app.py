@@ -42,7 +42,7 @@ def upload_image():
     image_path = os.path.abspath(os.path.join(UPLOAD_FOLDER, file.filename))
     file.save(image_path)
 
-    response = requests.post(ML_CLIENT_URL, json={"image_path": image_path}, timeout=10)
+    requests.post(ML_CLIENT_URL, json={"image_path": image_path}, timeout=10)
     client = MongoClient(MONGO_URI)
     db = client[MONGO_DBNAME]
 
