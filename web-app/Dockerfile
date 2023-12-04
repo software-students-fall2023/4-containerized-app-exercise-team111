@@ -21,6 +21,6 @@ ENV MONGO_HOST=mongodb
 ENV MONGO_PORT=27017
 ENV MONGO_URI=mongodb://mongodb:27017
 ENV MONGO_DBNAME=object_recognition_db
-
+ENV ML_CLIENT_URL=http://machine-learning-client:5003
 # Command to run your application
 CMD ["python", "app.py"]
