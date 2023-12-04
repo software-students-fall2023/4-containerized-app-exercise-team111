@@ -22,38 +22,38 @@ Standup Report - 30 November 2023
 --------------------------------
 
 Steven Liu @stevenkhl446
-- Done: implemented machine learning client
-- Doing: test functions for mlc
-- Blocking: none
+- did: implemented machine learning client
+- doing: test functions for mlc
+- blockers: none
 
 Merlin @wwxihan2
-- Done: setting up web app
-- Doing: client side javascript for connecting to database(setting up pymongo) 
-- Blocking: none
+- did: setting up web app
+- doing: client side javascript for connecting to database(setting up pymongo) 
+- blockers: none
 
 Standup Report - 2 December 2023
 --------------------------------
 Steven Liu @stevenkhl446
-- Done: redirect machine client learning to Merlin
-- Doing: test functions for updated machine client learning by Merlin
-- Blocking: none
+- did: redirect machine client learning to Merlin
+- doing: test functions for updated machine client learning by Merlin
+- blockers: none
 
 Merlin @wwxihan2
-- Done: finished web app routers structure and pymongo
-- Doing: client side javascript, and machine learning client 
-- Blocking: none
+- did: finished web app routers structure and pymongo
+- doing: client side javascript, and machine learning client 
+- blockers: none
 
 Standup Report - 4 December 2023
 --------------------------------
 Steven Liu @stevenkhl446
-- Done: finsihed test functions for both web-app and machine client learning
-- Doing: retesting, and mongodb test functions on machine learning, other documentations 
-- Blocking: none
+- did: finsihed test functions for both web-app and machine client learning
+- doing: retesting, and mongodb test functions on machine learning, other documentations 
+- blockers: none
 
 Merlin @wwxihan2
-- Done: machine learning client, webcam.js(client side javascript), web app, mongodb.
-- Doing: review all documentations
-- Blocking: none
+- did: machine learning client, webcam.js(client side javascript), web app, mongodb.
+- doing: review all documentations
+- blockers: none
 ```
 
 
