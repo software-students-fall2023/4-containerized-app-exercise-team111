@@ -11,8 +11,12 @@ indicate the plausibility of matching object in the image. The web app connects 
 
 ## Team Members
 
-- [Teammate1](https://github.com/stevenkhl446)
-- [Teammate2](https://github.com/wwxihan2)
+
+- [Merlin Li](https://github.com/wwxihan2)
+- [Steven](https://github.com/stevenkhl446)
+- [Harley](https://github.com/harley-bulbasaur)
+- [Zhiyi (Valery)](https://github.com/Val001z)
+
 
 ## Stand up meetings
 ```
@@ -58,8 +62,11 @@ Merlin @wwxihan2
 
 ## Configuration and Setup
 
-step 1:
-step 2:
+step 1: clone the repository
+step 2: run  docker-compose up --build in the main directory
+step 3: go to http://localhost:8001 on your browser
+step 4: enjoy!
+
 .....
 ### Prerequisites
 [Requirement.txt File](/4-containerized-app-exercise-team111/requirements.txt)
