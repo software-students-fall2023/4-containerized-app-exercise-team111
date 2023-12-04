@@ -11,12 +11,10 @@ indicate the plausibility of matching object in the image. The web app connects 
 
 ## Team Members
 
-
 - [Merlin Li](https://github.com/wwxihan2)
 - [Steven](https://github.com/stevenkhl446)
 - [Harley](https://github.com/harley-bulbasaur)
 - [Zhiyi (Valery)](https://github.com/Val001z)
-
 
 ## Stand up meetings
 ```
@@ -60,42 +58,9 @@ Merlin @wwxihan2
 ```
 
 
-## Configuration and Setup
+## Running the Application
 
-step 1: clone the repository
-step 2: run  docker-compose up --build in the main directory
-step 3: go to http://localhost:8001 on your browser
-step 4: enjoy!
-
-.....
-### Prerequisites
-[Requirement.txt File](/4-containerized-app-exercise-team111/requirements.txt)
-
-put requriements.txt here
-### Setup and Installation
-
-- Step-by-step guide on setting up the environment.
-- How to install the necessary dependencies/packages.
-
-### Running the Application
-
-- Instructions on how to run the web app.
-- Instructions on how to run the machine learning client.
-
-## Importing Starter Data
-
-If your system requires starter data to operate correctly, provide instructions on how to import this data into the database.
-
-### Steps to Import Data
-
-1. Step 1: Direct to app.py within web-app foler
-2. Step 2: Run the program to the main page
-3. Step 3: Upload preferred image(jpg or png) to see results
-4. step 4: results will be stored in a database
-
-## Additional Notes
-
-Be aware of the version of dependencies downloaded. They must match the provided dependencies in requirements.txt.
----
-
-Build a containerized app that uses machine learning. See [instructions](./instructions.md) for details.
+- step 1: clone the repository
+- step 2: run  docker-compose up --build in the main directory
+- step 3: go to http://localhost:8001 on your browser
+- step 4: enjoy!
