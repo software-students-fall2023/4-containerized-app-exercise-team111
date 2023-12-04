@@ -1,15 +1,15 @@
+"""
+Module for testing the Flask app's functionalities.
+"""
+
 import os
 import sys
-import warnings
-warnings.filterwarnings("ignore", category=DeprecationWarning)
-
-
-import mongomock
 import pytest
+import mongomock
 from io import BytesIO
-
 from app import app as flask_app
 
+# Adjusting sys.path to include the directory above, so imports work correctly
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "")))
 
 
