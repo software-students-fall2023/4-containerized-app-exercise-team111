@@ -2,10 +2,9 @@
 FROM python:3.10
 
 # Set the working directory to /app
-WORKDIR /app
+WORKDIR /machine_learning_client
 
 # Install OpenCV dependencies
-
 RUN apt-get update && apt-get install -y \
     libgl1 \
     libglib2.0-0 \
@@ -14,9 +13,6 @@ RUN apt-get update && apt-get install -y \
     libxrender-dev \
     libfontconfig1
 
-
-# Copy the requirements file from the machine-learning-client directory
-# This assumes that the dockerfile.web is located at the root of your project and the requirements.txt is in the machine-learning-client folder.
 COPY requirements.txt .
 
 # Install any needed packages specified in requirements.txt
@@ -36,5 +32,4 @@ ENV MONGO_URI=mongodb://mongodb:27017
 ENV MONGO_DBNAME=object_recognition_db
 
 # Command to run your application
-# Make sure app.py is the correct filename and it's located in the root of machine-learning-client
 CMD ["python", "app.py"]
