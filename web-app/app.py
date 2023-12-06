@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This module sets up a Flask web application for uploading and processing images.
 """
