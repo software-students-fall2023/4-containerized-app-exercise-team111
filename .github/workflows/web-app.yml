@@ -44,8 +44,6 @@ jobs:
           FLASK_APP: ${{ secrets.FLASK_APP }}
         working-directory: ./
 
-  
-
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
