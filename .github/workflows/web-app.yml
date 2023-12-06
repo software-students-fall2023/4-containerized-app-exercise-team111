@@ -73,4 +73,5 @@ jobs:
               docker volume prune -f
               docker-compose pull
               docker-compose down
-              docker-compose up --build
+              docker-compose up -d
+
