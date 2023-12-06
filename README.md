@@ -54,7 +54,7 @@ Steven Liu @stevenkhl446
 Merlin @wwxihan2
 - did: machine learning client, webcam.js(client side javascript), web app, mongodb.
 -doing: review all documentations
--blockers none
+-blockers none 
 ```
 
 
