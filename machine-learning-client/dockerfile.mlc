@@ -37,4 +37,4 @@ ENV MONGO_DBNAME=object_recognition_db
 
 # Command to run your application
 # Make sure app.py is the correct filename and it's located in the root of machine-learning-client
-CMD ["python", "./app.py"]
+CMD ["python", "app.py"]
