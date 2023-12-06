@@ -5,7 +5,6 @@ Module for testing the object recognition functionality.
 import sys
 import os
 import numpy as np
-import pytest
 from unittest.mock import patch
 from object_recognition import preprocess_image
 
