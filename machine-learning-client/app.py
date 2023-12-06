@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This module provides a Flask web application for processing images with object recognition.
 It includes endpoints for processing images and interfacing with a database to store the results.

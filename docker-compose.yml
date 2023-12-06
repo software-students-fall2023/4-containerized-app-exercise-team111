@@ -8,9 +8,10 @@ services:
 
   machine-learning-client:
     build:
-      context: .
-      dockerfile: machine-learning-client/Dockerfile
+      context: ./machine-learning-client
+      dockerfile: dockerfile.mlc
     image: wwxihan/machine-learning-client:latest
+    container_name: mlc-container
     ports:
       - "5003:5003"
     environment:
@@ -24,9 +25,10 @@ services:
 
   web-app:
     build:
-      context: .
-      dockerfile: web-app/Dockerfile
+      context: ./web-app
+      dockerfile: dockerfile.web
     image: wwxihan/web-app:latest
+    container_name: web-app-container
     ports:
       - "8001:8001"
     environment:
