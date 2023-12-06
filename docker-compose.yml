@@ -10,6 +10,7 @@ services:
     build:
       context: .
       dockerfile: machine-learning-client/Dockerfile
+    image: wwxihan/machine-learning-client:latest
     ports:
       - "5003:5003"
     environment:
@@ -25,6 +26,7 @@ services:
     build:
       context: .
       dockerfile: web-app/Dockerfile
+    image: wwxihan/web-app:latest
     ports:
       - "8001:8001"
     environment:
