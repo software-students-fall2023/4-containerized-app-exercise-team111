@@ -42,7 +42,6 @@ jobs:
           MONGO_DBNAME: ${{ secrets.MONGO_DBNAME }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
           FLASK_APP: ${{ secrets.FLASK_APP }}
-        working-directory: ./
 
   deploy:
     needs: build-and-push
