@@ -86,6 +86,8 @@ Zhiyi @Val001z
 - step 2: In the main directory, run `docker-compose up --build`.
 - step 3: Open your browser and go to `http://localhost:8001`. 
 - step 4: Enjoy using the application!
+Or
+- Or access http://159.203.68.77:8001
 
 ## Test Coverage
 ![](coverage.png)

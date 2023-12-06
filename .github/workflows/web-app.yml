@@ -1,6 +1,6 @@
 name: WebAppCI/CD
 
-on: [ push, pull_request ]
+on: [ push ]
 
 jobs:
   test:
@@ -70,6 +70,7 @@ jobs:
               docker container prune -f
               docker image prune -f
               docker volume prune -f
+              docker network prune -f
               docker-compose pull
               docker-compose down
               docker-compose up -d
