@@ -1,7 +1,7 @@
 # Containerized App Exercise
 # Image Recognition
 
-[![Build Status](https://github.com/software-students-fall2023/4-containerized-app-exercise-team111/actions/workflows/web-app.yml/badge.svg?event=pull_request)](https://github.com/software-students-fall2023/4-containerized-app-exercise-team111/actions/workflows/web-app.yml/badge.svg?event=pull_request)
+[![Build Status](https://github.com/software-students-fall2023/4-containerized-app-exercise-team111/actions/workflows/web-app.yml/badge.svg?event=push)](https://github.com/software-students-fall2023/4-containerized-app-exercise-team111/actions/workflows/web-app.yml/badge.svg?event=push)
 [![Build Status](https://github.com/software-students-fall2023/4-containerized-app-exercise-team111/actions/workflows/machine-learning-client.yml/badge.svg)](https://github.com/software-students-fall2023/4-containerized-app-exercise-team111/actions/workflows/machine-learning-client.yml/badge.svg)
 
 ## Description
@@ -87,7 +87,18 @@ Zhiyi @Val001z
 - step 3: Open your browser and go to `http://localhost:8001`. 
 - step 4: Enjoy using the application!
 Or
-- Or access http://159.203.68.77:8001
+- Or access http://159.203.68.77:8001(However, it is extremely slow, so local sever is recommended)
+If using Google Chrome, follow these steps to activate your camera:
+
+1. **Open Chrome Flags**:
+   - Type `chrome://flags/#unsafely-treat-insecure-origin-as-secure` in the address bar and press Enter.
+
+2. **Enable Insecure Origins**:
+   - Add `http://159.203.68.77:8001` in the "Insecure origins treated as secure" section.
+   - Change dropdown to 'Enabled'.
+
+3. **Relaunch Chrome**:
+   - Click 'Relaunch' to apply changes.
 
 ## Test Coverage
 ![](coverage.png)
