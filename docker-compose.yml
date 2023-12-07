@@ -20,7 +20,7 @@ services:
     depends_on:
       - mongodb
     volumes:
-      - uploads:/app/uploads
+      - uploads:/uploads
 
   web-app:
     build:
@@ -38,7 +38,7 @@ services:
       - mongodb
       - machine-learning-client
     volumes:
-      - uploads:/app/uploads
+      - uploads:/uploads
 
 volumes:
   uploads:

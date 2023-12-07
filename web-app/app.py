@@ -11,7 +11,7 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__, static_folder="public")
 
 # Directory to save uploaded images
-UPLOAD_FOLDER = "uploads/"
+UPLOAD_FOLDER = "../uploads/"
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
